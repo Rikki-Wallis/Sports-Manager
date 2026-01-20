@@ -1,1 +1,63 @@
-<p>register works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="submit()" class="register-box">
+
+    <h2> Create Account </h2>
+
+    <!-- Email -->
+    <label for="email"> Email </label>
+    <input 
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="Enter Your Email"
+        />
+    
+    <div class="error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+        <small *ngIf="registerForm.get('email')?.errors?.['required']">
+            Email is required
+        </small>
+        <small *ngIf="registerForm.get('email')?.errors?.['email']">
+            Enter a valid email
+        </small>
+    </div>
+
+    <!-- Password -->
+    <label for="password">
+        Password
+    </label>
+
+    <input
+        id="password"
+        type="password"
+        formControlName="password"
+        palceholder="Enter your password"
+        />
+
+    <div class="error" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+        <small> Password is required </small>
+    </div>
+
+    <!-- Confirm Password -->
+    <label for="password">
+        Confirm Password
+    </label>
+
+    <input
+        id="confirmPassword"
+        type="password"
+        formControlName="confirmPassword"
+        palceholder="Re-enter your password"
+        />
+
+    <div class="error" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid">
+        <small> Confirmation of password is required </small>
+    </div>
+
+    <div class="error" *ngIf="registerForm.errors?.['passwordsMismatch'] && registerForm.get('confirmPassword')?.touched">
+        <small> Passwords do not match </small>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">
+        Register
+    </button>
+
+</form>

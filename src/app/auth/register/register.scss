@@ -1,0 +1,59 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.register-box {
+    width: 320px;
+    margin: 100px auto;
+    padding: 10px;
+    background: rgba(2, 129, 255, 0.183);
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+h2 {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.909);
+    padding: 8px;
+    margin-top: 5px;
+    max-width: 300px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
